@@ -586,7 +586,7 @@
                 </button>
                 </div>
                 <div class="cta__image">
-                  <img src="assets/red-bitoc.png" alt="" title="" class="cta__img"/>
+                  <img src="assets/stack_of_coins.svg" alt="" title="" class="cta__img"/>
                 </div>
               </div>
             </div>
@@ -676,6 +676,13 @@
         });
       });
     </script>
-  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("img").forEach(img => {
+        img.setAttribute("fetchpriority", "low");
+      });
+    });
+    </script>
+    
   </body>
 </html>
