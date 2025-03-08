@@ -784,9 +784,6 @@ header {
   backdrop-filter: blur(100px);
 }
 
-.team__content {
-}
-
 .team__subtitle {
   font-size: 14px;
   margin-bottom: 8px;
@@ -1835,7 +1832,6 @@ width: 27px;
   padding: 20px;
 }
 
-/* Назначаем каждому элементу свою область */
 .team__subtitle {
   grid-area: subtitle;
   text-align: left;

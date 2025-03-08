@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const content = document.querySelector('.scroll-container__content');
     const thumb = document.querySelector('.scroll-container__scrollbar-thumb');
     
-    // Установка начальной высоты скролла
     function updateScrollbar() {
       const contentHeight = content.scrollHeight;
       const visibleHeight = content.clientHeight;
@@ -34,16 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
       
       thumb.style.height = (scrollRatio * 100) + '%';
       
-      // Позиция скролла
       const scrollPosition = content.scrollTop / (contentHeight - visibleHeight);
       const thumbPosition = scrollPosition * (visibleHeight - thumb.offsetHeight);
       thumb.style.top = thumbPosition + 'px';
     }
     
-    // Отслеживание события скролла
     content.addEventListener('scroll', updateScrollbar);
     
-    // Перетаскивание скролла мышью
     let isDragging = false;
     let startY, startScrollTop;
     
@@ -51,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
       isDragging = true;
       startY = e.clientY;
       startScrollTop = content.scrollTop;
-      document.body.style.userSelect = 'none'; // Запрет выделения текста при перетаскивании
+      document.body.style.userSelect = 'none';
     });
     
     document.addEventListener('mousemove', function(e) {
@@ -70,9 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.style.userSelect = '';
     });
     
-    // Инициализация
     updateScrollbar();
     
-    // Обновление при изменении размера окна
     window.addEventListener('resize', updateScrollbar);
   });
